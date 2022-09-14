@@ -1,4 +1,5 @@
-import { Icon } from '@chakra-ui/react'
+import { Icon } from '@chakra-ui/react';
+import React from 'react';
 
 export const ChartIcon = () => (
     <Icon>

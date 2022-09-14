@@ -5,7 +5,7 @@ import {
     Box,
     Divider
 } from "@chakra-ui/react";
-import { FunctionComponent } from "react";
+import React, { FunctionComponent } from "react";
 
 
 export const Footer: FunctionComponent = () => {

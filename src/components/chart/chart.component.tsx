@@ -1,5 +1,5 @@
 import { Box, Container, Flex, FormControl, FormLabel, Heading, Switch, useMultiStyleConfig } from "@chakra-ui/react";
-import { FunctionComponent, useState } from "react";
+import React, { FunctionComponent, useState } from "react";
 import { Bar, Pie } from 'react-chartjs-2';
 import { useSelector } from "react-redux";
 import { State } from "../../types";

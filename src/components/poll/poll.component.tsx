@@ -1,4 +1,4 @@
-import { FunctionComponent, useState } from "react";
+import React, { FunctionComponent, useState } from "react";
 import { Container, Button, Radio, RadioGroup, Stack, Heading, useMultiStyleConfig, Flex } from '@chakra-ui/react'
 import { CheckIcon } from "@chakra-ui/icons";
 import { useSelector, useDispatch } from "react-redux";
@@ -24,7 +24,7 @@ export const Poll: FunctionComponent = () => {
             <RadioGroup onChange={(key) => setValue(key)} value={value} >
                 <Stack>
                     {Object.entries(options).map(([key, option]) => (
-                        <Radio value={key}>{option.value}</Radio>
+                        <Radio value={key} key={key}>{option.value}</Radio>
                     ))}
                 </Stack>
             </RadioGroup>

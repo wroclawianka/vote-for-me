@@ -7,7 +7,7 @@ import {
     IconButton,
 } from "@chakra-ui/react";
 import { CheckIcon } from '@chakra-ui/icons'
-import {
+import React, {
     FunctionComponent,
     useRef,
     useState

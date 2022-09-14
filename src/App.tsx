@@ -16,7 +16,7 @@ import {
 import { theme } from './application.theme';
 import { Provider, useDispatch } from 'react-redux';
 import store from './store';
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 
 function App() {
 

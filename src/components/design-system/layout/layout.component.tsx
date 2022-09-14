@@ -3,7 +3,7 @@ import {
     Flex,
     useMultiStyleConfig
 } from "@chakra-ui/react";
-import { FunctionComponent } from "react";
+import React, { FunctionComponent } from "react";
 import { Footer } from "../footer";
 import { Header } from "../header";
 
