@@ -1,9 +1,27 @@
-import { Box, Container, Flex, FormControl, FormLabel, Heading, Switch, useMultiStyleConfig } from "@chakra-ui/react";
-import React, { FunctionComponent, useState } from "react";
-import { Bar, Pie } from 'react-chartjs-2';
+import {
+    Container,
+    Flex,
+    FormControl,
+    FormLabel,
+    Heading,
+    Switch,
+    useMultiStyleConfig
+} from "@chakra-ui/react";
+import React, {
+    FunctionComponent,
+    useState
+} from "react";
+import {
+    Bar,
+    Pie
+}
+    from 'react-chartjs-2';
 import { useSelector } from "react-redux";
 import { State } from "../../types";
-import { BarIcon, ChartIcon } from "../design-system";
+import {
+    BarIcon,
+    ChartIcon
+} from "../design-system";
 
 export const Chart: FunctionComponent = () => {
     const style = useMultiStyleConfig('chart', {})

@@ -14,15 +14,11 @@ import {
   registerables
 } from 'chart.js';
 import { theme } from './application.theme';
-import { Provider, useDispatch } from 'react-redux';
+import { Provider } from 'react-redux';
 import store from './store';
-import React, { useEffect } from 'react';
+import React from 'react';
 
 function App() {
-
-
-
-
   ChartJS.register(...registerables);
 
   return (
