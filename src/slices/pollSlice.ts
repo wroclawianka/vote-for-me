@@ -42,13 +42,9 @@ export const pollSlice = createSlice({
           value: value
         }
       };
-
-      //TODO: remove
-      console.log(actions.payload.value);
     },
     addSubmition: (state, actions) => {
       const key = actions.payload;
-      // @ts-ignore
       const option = state.options[key];
       state.options = {
         ...state.options,
