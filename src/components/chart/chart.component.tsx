@@ -4,6 +4,7 @@ import {
   FormControl,
   FormLabel,
   Switch,
+  Tooltip,
   useMultiStyleConfig
 } from '@chakra-ui/react';
 import { FunctionComponent, useState } from 'react';
@@ -28,25 +29,34 @@ export const Chart: FunctionComponent = () => {
     ]
   };
 
+  const chartTypeSwitchLabel = 'Choose the type of the presented chart';
+
   return (
     <Container sx={style.root}>
       <Flex justifyContent="space-between" mb="2">
         <Title>Chart</Title>
         <Flex>
-          <FormControl sx={style.formControl}>
-            <FormLabel htmlFor="chart-type" sx={style.formLabel}>
-              <ChartIcon />
-            </FormLabel>
-            <Switch
-              id="chart-type"
-              colorScheme="grey"
-              onChange={(event) => setIsBarChart(event.target.checked)}
-              sx={style.switch}
-            />
-            <FormLabel htmlFor="chart-type" sx={style.formLabel}>
-              <BarIcon />
-            </FormLabel>
-          </FormControl>
+          <Tooltip
+            label={chartTypeSwitchLabel}
+            aria-label="vote-button"
+            placement="top"
+            hasArrow
+          >
+            <FormControl sx={style.formControl}>
+              <FormLabel htmlFor="chart-type" sx={style.formLabel}>
+                <ChartIcon />
+              </FormLabel>
+              <Switch
+                id="chart-type"
+                colorScheme="grey"
+                onChange={(event) => setIsBarChart(event.target.checked)}
+                sx={style.switch}
+              />
+              <FormLabel htmlFor="chart-type" sx={style.formLabel}>
+                <BarIcon />
+              </FormLabel>
+            </FormControl>
+          </Tooltip>
         </Flex>
       </Flex>
       {isBarChart ? (
