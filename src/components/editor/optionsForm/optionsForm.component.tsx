@@ -23,6 +23,7 @@ export const OptionsForm: FunctionComponent = () => {
   };
 
   const editOption = (id: string, value: string) => {
+    if (value.length > 80) return;
     const option: Option = { ...options[id], value: value };
     dispatch(updatePoll({ id, value: option.value }));
   };
@@ -35,6 +36,7 @@ export const OptionsForm: FunctionComponent = () => {
     'Add a new option. It is possible to have between 2-10 options';
   const removeOptionLabel =
     'Remove option. It is possible to have between 2-10 options';
+  const maximumInputLength = 'Max length reached (80 characters)';
 
   return (
     <Grid>
@@ -61,11 +63,16 @@ export const OptionsForm: FunctionComponent = () => {
       {Object.entries(options).map(([key, option]) => (
         <GridItem key={key} mb={2}>
           <Flex>
-            <Input
-              value={option.value}
-              onChange={(event) => editOption(key, event.target.value)}
-              mr={2}
-            />
+            <Tooltip
+              label={maximumInputLength}
+              isDisabled={option.value.length < 80}
+            >
+              <Input
+                value={option.value}
+                onChange={(event) => editOption(key, event.target.value)}
+                mr={2}
+              />
+            </Tooltip>
             <Tooltip label={removeOptionLabel} aria-label="remove-option">
               <IconButton
                 aria-label="delete"
