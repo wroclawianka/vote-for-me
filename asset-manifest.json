@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.js": "/wroclawianka/vote-for-me/static/js/main.c9d6db4d.js",
-    "index.html": "/wroclawianka/vote-for-me/index.html",
-    "main.c9d6db4d.js.map": "/wroclawianka/vote-for-me/static/js/main.c9d6db4d.js.map"
+    "main.js": "/vote-for-me/static/js/main.c9d6db4d.js",
+    "index.html": "/vote-for-me/index.html",
+    "main.c9d6db4d.js.map": "/vote-for-me/static/js/main.c9d6db4d.js.map"
   },
   "entrypoints": [
     "static/js/main.c9d6db4d.js"
