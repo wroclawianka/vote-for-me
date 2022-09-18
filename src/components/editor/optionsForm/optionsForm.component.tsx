@@ -37,6 +37,7 @@ export const OptionsForm: FunctionComponent = () => {
   const removeOptionLabel =
     'Remove option. It is possible to have between 2-10 options';
   const maximumInputLength = 'Max length reached (80 characters)';
+  const optionPlaceholder = 'New option';
 
   return (
     <Grid>
@@ -71,6 +72,8 @@ export const OptionsForm: FunctionComponent = () => {
                 value={option.value}
                 onChange={(event) => editOption(key, event.target.value)}
                 mr={2}
+                placeholder={optionPlaceholder}
+                autoFocus
               />
             </Tooltip>
             <Tooltip label={removeOptionLabel} aria-label="remove-option">
