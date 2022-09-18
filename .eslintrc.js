@@ -6,7 +6,8 @@ module.exports = {
     "extends": [
         "eslint:recommended",
         "plugin:react/recommended",
-        "plugin:@typescript-eslint/recommended"
+        "plugin:@typescript-eslint/recommended",
+        'plugin:prettier/recommended',
     ],
     "overrides": [
     ],
@@ -18,6 +19,7 @@ module.exports = {
     "plugins": [
         "react",
         "@typescript-eslint",
+        'prettier',
         "unused-imports"
     ],
     "settings": {
@@ -31,6 +33,16 @@ module.exports = {
         "react/jsx-filename-extension": ["warn", { "extensions": [".tsx",] }],
         "react/jsx-uses-react": "off",
         "react/react-in-jsx-scope": "off",
+        'sort-imports': [
+            'error',
+            {
+              ignoreCase: false,
+              ignoreDeclarationSort: true, // don"t want to sort import lines, use eslint-plugin-import instead
+              ignoreMemberSort: false,
+              memberSyntaxSortOrder: ['none', 'all', 'multiple', 'single'],
+              allowSeparatedGroups: true,
+            },
+          ],
         "@typescript-eslint/no-unused-vars": "off",
         "unused-imports/no-unused-imports": "error",
         "unused-imports/no-unused-vars": [
