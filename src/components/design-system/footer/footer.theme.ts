@@ -1,8 +1,8 @@
 export const footerTheme = {
   'design-system/footer': {
-    parts: ['footer', 'text', 'highlight'],
+    parts: ['root', 'text', 'link'],
     baseStyle: {
-      footer: {
+      root: {
         p: '10px 0',
         justifyContent: 'center',
         fontFamily: 'Open Sans',
@@ -10,6 +10,9 @@ export const footerTheme = {
       },
       text: {
         fontSize: '12'
+      },
+      link: {
+        color: 'teal.500'
       }
     }
   }
