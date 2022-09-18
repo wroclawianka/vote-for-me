@@ -17,9 +17,25 @@ module.exports = {
     },
     "plugins": [
         "react",
-        "@typescript-eslint"
+        "@typescript-eslint",
+        "unused-imports"
     ],
+    "settings": {
+        react: {
+            version: "detect"
+        }
+    },
     "rules": {
-        'semi': ['error', 'always']
+        'semi': ['error', 'always'],
+        'quotes': ["error", "single"],
+        "react/jsx-filename-extension": ["warn", { "extensions": [".tsx",] }],
+        "react/jsx-uses-react": "off",
+        "react/react-in-jsx-scope": "off",
+        "@typescript-eslint/no-unused-vars": "off",
+        "unused-imports/no-unused-imports": "error",
+        "unused-imports/no-unused-vars": [
+            "error",
+            { "vars": "all", "varsIgnorePattern": "^_", "args": "after-used", "argsIgnorePattern": "^_" }
+        ]
     }
 }

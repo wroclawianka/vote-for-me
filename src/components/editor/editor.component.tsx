@@ -2,7 +2,7 @@
 
 import { Button, Container, Grid, GridItem, IconButton, Input, Flex, useMultiStyleConfig, Heading, Box, Tooltip } from "@chakra-ui/react";
 import { AddIcon, DeleteIcon, MinusIcon, StarIcon } from '@chakra-ui/icons'
-import React, { FunctionComponent } from "react";
+import { FunctionComponent } from "react";
 import { useDispatch, useSelector } from 'react-redux'
 import { Option, State } from "../../types";
 import _ from "lodash";

@@ -7,7 +7,7 @@ import {
     Switch,
     useMultiStyleConfig
 } from "@chakra-ui/react";
-import React, {
+import {
     FunctionComponent,
     useState
 } from "react";

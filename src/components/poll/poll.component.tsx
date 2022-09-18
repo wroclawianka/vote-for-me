@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useState } from "react";
+import { FunctionComponent, useState } from "react";
 import { Container, Button, Radio, RadioGroup, Stack, Heading, useMultiStyleConfig, Flex } from '@chakra-ui/react'
 import { CheckIcon } from "@chakra-ui/icons";
 import { useSelector, useDispatch } from "react-redux";

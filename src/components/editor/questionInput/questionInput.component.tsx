@@ -7,9 +7,8 @@ import {
     IconButton,
 } from "@chakra-ui/react";
 import { CheckIcon } from '@chakra-ui/icons'
-import React, {
+import {
     FunctionComponent,
-    useRef,
     useState
 } from "react";
 import _ from "lodash";
