@@ -4,7 +4,7 @@
    - :date: September 2022
    
 <p align="center">
-    <img width="500px" src="https://github.com/wroclawianka/vote-for-me/blob/master/assets/vote-for-me-demo.png"/>
+    <img width="500px" src="https://raw.githubusercontent.com/wroclawianka/vote-for-me/main/assets/vote-for-me-demo.png"/>
  </p>
 
 Web application that allows you to be the creator of the survey and respondent. Edit your survey, submit it and see the graphical results of the survey. Use demo questions and options or create your own. 
