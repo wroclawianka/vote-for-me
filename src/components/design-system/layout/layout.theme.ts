@@ -1,9 +1,9 @@
 export const layoutTheme = {
   layout: {
-    parts: ['mainContainer'],
+    parts: ['mainContainer', 'mainPage'],
     baseStyle: {
       mainContainer: {
-        height: '100%',
+        minHeight: '100%',
         background:
           'linear-gradient(90deg, white 33%, RGBA(0, 0, 0, 0.04) 33% 67%, white 33%)'
       },
