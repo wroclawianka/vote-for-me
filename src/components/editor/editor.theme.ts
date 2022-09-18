@@ -4,8 +4,7 @@ export const editorTheme = {
     baseStyle: {
       root: {
         h: '100%',
-        position: 'relative',
-        mb: '100px'
+        position: 'relative'
       },
       buttonsContainer: {
         width: '100%',
