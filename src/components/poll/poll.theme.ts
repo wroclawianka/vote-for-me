@@ -6,11 +6,18 @@ export const pollTheme = {
         h: '100%',
         position: 'relative'
       },
-      btns: {
+      question: {
+        mb: 2,
+        size: 'sm'
+      },
+      buttonsContainer: {
         width: '100%',
         justifyContent: 'center',
         position: 'absolute',
         bottom: '5'
+      },
+      button: {
+        mt: 2
       }
     }
   }

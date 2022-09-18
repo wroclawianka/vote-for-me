@@ -28,7 +28,7 @@ export const Poll: FunctionComponent = () => {
   return (
     <Container sx={style.root}>
       <Title>Poll</Title>
-      <Heading size="sm" mb={2}>
+      <Heading size="sm" sx={style.question}>
         {question}
       </Heading>
       <RadioGroup onChange={(key) => setValue(key)} value={value}>
@@ -40,15 +40,15 @@ export const Poll: FunctionComponent = () => {
           ))}
         </Stack>
       </RadioGroup>
-      <Flex sx={style.btns}>
+      <Flex sx={style.buttonsContainer}>
         <Button
-          mt={2}
           colorScheme="teal"
           size="sm"
           leftIcon={<CheckIcon />}
           onClick={() => submitPoll()}
+          sx={style.button}
         >
-          Submit
+          Vote
         </Button>
       </Flex>
     </Container>
