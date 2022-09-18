@@ -1,8 +1,8 @@
 export const headingTheme = {
   heading: {
-    parts: ['container', 'heading'],
+    parts: ['root', 'heading'],
     baseStyle: {
-      container: {
+      root: {
         justifyContent: 'center',
         pb: 4
       },
