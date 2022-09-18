@@ -27,7 +27,19 @@ export const Poll: FunctionComponent = () => {
 
   return (
     <Container sx={style.root}>
-      <Title>Poll</Title>
+      <Flex justifyContent="space-between" mb="2">
+        <Title>Poll</Title>
+        <Flex sx={style.buttonsContainer}>
+          <Button
+            colorScheme="teal"
+            size="sm"
+            leftIcon={<CheckIcon />}
+            onClick={() => submitPoll()}
+          >
+            Vote
+          </Button>
+        </Flex>
+      </Flex>
       <Heading size="sm" sx={style.question}>
         {question}
       </Heading>
@@ -40,17 +52,6 @@ export const Poll: FunctionComponent = () => {
           ))}
         </Stack>
       </RadioGroup>
-      <Flex sx={style.buttonsContainer}>
-        <Button
-          colorScheme="teal"
-          size="sm"
-          leftIcon={<CheckIcon />}
-          onClick={() => submitPoll()}
-          sx={style.button}
-        >
-          Vote
-        </Button>
-      </Flex>
     </Container>
   );
 };

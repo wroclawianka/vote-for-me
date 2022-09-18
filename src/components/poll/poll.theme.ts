@@ -12,12 +12,8 @@ export const pollTheme = {
       },
       buttonsContainer: {
         width: '100%',
-        justifyContent: 'center',
-        position: 'absolute',
-        bottom: '5'
-      },
-      button: {
-        mt: 2
+        justifyContent: 'end',
+        mb: 3
       }
     }
   }

@@ -8,7 +8,7 @@ export const chartTheme = {
       formControl: {
         width: '100%',
         display: 'flex',
-        justifyContent: 'center'
+        justifyContent: 'end'
       },
       formLabel: {
         ml: 2

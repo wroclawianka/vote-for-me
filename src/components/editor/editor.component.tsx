@@ -22,25 +22,27 @@ export const Editor: FunctionComponent = () => {
 
   return (
     <Container sx={style.root}>
-      <Title>Editor</Title>
-      <Flex sx={style.buttonsContainer}>
-        <Button
-          colorScheme="teal"
-          size="sm"
-          leftIcon={<DeleteIcon />}
-          onClick={resetForm}
-          variant="ghost"
-        >
-          Reset
-        </Button>
-        <Button
-          colorScheme="teal"
-          size="sm"
-          leftIcon={<StarIcon />}
-          onClick={updateToDemoPoll}
-        >
-          Demo
-        </Button>
+      <Flex mb="2">
+        <Title>Editor</Title>
+        <Flex sx={style.buttonsContainer}>
+          <Button
+            colorScheme="teal"
+            size="sm"
+            leftIcon={<DeleteIcon />}
+            onClick={resetForm}
+            variant="ghost"
+          >
+            Reset
+          </Button>
+          <Button
+            colorScheme="teal"
+            size="sm"
+            leftIcon={<StarIcon />}
+            onClick={updateToDemoPoll}
+          >
+            Demo
+          </Button>
+        </Flex>
       </Flex>
       <Box mb={4}>
         <QuestionInput />
