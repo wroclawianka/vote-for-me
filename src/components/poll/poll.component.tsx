@@ -13,6 +13,7 @@ import { CheckIcon } from '@chakra-ui/icons';
 import { useDispatch, useSelector } from 'react-redux';
 import { State } from '../../types';
 import { addSubmition } from '../../slices/pollSlice';
+import { Heading as Title } from '../design-system';
 
 export const Poll: FunctionComponent = () => {
   const style = useMultiStyleConfig('poll', {});
@@ -25,12 +26,8 @@ export const Poll: FunctionComponent = () => {
   const submitPoll = () => dispatch(addSubmition(value));
 
   return (
-    <Container sx={style.poll}>
-      <Flex justifyContent="center" pb={4}>
-        <Heading size="lg" fontFamily="Permanent Marker">
-          Poll
-        </Heading>
-      </Flex>
+    <Container sx={style.root}>
+      <Title>Poll</Title>
       <Heading size="sm" mb={2}>
         {question}
       </Heading>

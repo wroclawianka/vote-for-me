@@ -1,8 +1,8 @@
 export const pollTheme = {
   poll: {
-    parts: ['poll'],
+    parts: ['root', 'btns'],
     baseStyle: {
-      poll: {
+      root: {
         h: '100%',
         position: 'relative'
       },
