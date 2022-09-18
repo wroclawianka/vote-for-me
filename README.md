@@ -1,12 +1,22 @@
 # Vote for me App
+   - :mega: web app which allows you to create the survey, submit it, and see the results with the graphs
+   - :wrench: TypeScript, React, Redux, Chackra UI, Chart.js
+   - :date: September 2022
+   
+<p align="center">
+    <img width="500px" src="https://github.com/wroclawianka/vote-for-me/blob/master/vote-for-me-demo.png"/>
+ </p>
 
+Web application that allows you to be the creator of the survey and respondent. Edit your survey, submit it and see the graphical results of the survey. Use demo questions and options or create your own. 
 
+## Getting started
 
-## Available Scripts
+Preparation
+```
+npm install
+```
 
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Run
+```
+npm start
+```
