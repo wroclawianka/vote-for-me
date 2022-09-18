@@ -51,14 +51,14 @@ export const pollSlice = createSlice({
         [key]: { ...option, result: option.result + 1 }
       };
     },
-    updatToDemoState: () => INITIAL_STATE,
+    updateToDemoState: () => INITIAL_STATE,
     resetPoll: () => CLEAN_STATE
   }
 });
 
 export const {
   updateQuestion,
-  updatToDemoState,
+  updateToDemoState,
   removeOption,
   addOption,
   updatePoll,

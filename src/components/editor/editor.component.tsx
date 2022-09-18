@@ -4,49 +4,26 @@ import {
   Container,
   Flex,
   Grid,
-  GridItem,
   Heading,
-  IconButton,
-  Input,
   useMultiStyleConfig
 } from '@chakra-ui/react';
-import { AddIcon, DeleteIcon, MinusIcon, StarIcon } from '@chakra-ui/icons';
+import { DeleteIcon, StarIcon } from '@chakra-ui/icons';
 import { FunctionComponent } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { Option, State } from '../../types';
+import { useDispatch } from 'react-redux';
 import { QuestionInput } from './questionInput';
-import {
-  addOption,
-  removeOption,
-  resetPoll,
-  updatToDemoState,
-  updatePoll
-} from '../../slices/pollSlice';
+import { resetPoll, updateToDemoState } from '../../slices/pollSlice';
 import { Heading as Title } from '../design-system';
+import { OptionsForm } from './optionsForm';
 
 export const Editor: FunctionComponent = () => {
   const style = useMultiStyleConfig('editor', {});
-  const { options } = useSelector((state: { poll: State }) => state.poll);
   const dispatch = useDispatch();
 
-  const addNewOption = () => {
-    dispatch(addOption());
-  };
-
-  const editOption = (id: string, value: string) => {
-    const option: Option = { ...options[id], value: value };
-    dispatch(updatePoll({ id, value: option.value }));
-  };
-
-  const removeOptionById = (id: string) => {
-    dispatch(removeOption({ id }));
-  };
-
   const resetForm = () => dispatch(resetPoll());
-  const updateToDemoPoll = () => dispatch(updatToDemoState());
+  const updateToDemoPoll = () => dispatch(updateToDemoState());
 
   return (
-    <Container sx={style.editor}>
+    <Container sx={style.root}>
       <>
         <Title>Editor</Title>
         <Box mb={4}>
@@ -57,37 +34,11 @@ export const Editor: FunctionComponent = () => {
             Options
           </Heading>
           <Grid>
-            {Object.entries(options).map(([key, option]) => (
-              <GridItem key={key} mb={2}>
-                <Flex>
-                  <Input
-                    value={option.value}
-                    onChange={(event) => editOption(key, event.target.value)}
-                    mr={2}
-                  />
-                  <IconButton
-                    aria-label="delete"
-                    disabled={Object.entries(options).length <= 2}
-                  >
-                    <MinusIcon onClick={() => removeOptionById(key)} />
-                  </IconButton>
-                </Flex>
-              </GridItem>
-            ))}
-            <GridItem>
-              <Button
-                size="sm"
-                leftIcon={<AddIcon />}
-                float="right"
-                onClick={() => addNewOption()}
-              >
-                Add option
-              </Button>
-            </GridItem>
+            <OptionsForm />
           </Grid>
         </Box>
       </>
-      <Flex sx={style.btns}>
+      <Flex sx={style.buttonsContainer}>
         <Button
           colorScheme="teal"
           size="sm"

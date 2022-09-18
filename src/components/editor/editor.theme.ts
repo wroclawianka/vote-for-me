@@ -2,11 +2,11 @@ export const editorTheme = {
   editor: {
     parts: ['root', 'heading'],
     baseStyle: {
-      editor: {
+      root: {
         h: '100%',
         position: 'relative'
       },
-      btns: {
+      buttonsContainer: {
         width: '100%',
         justifyContent: 'center',
         position: 'absolute',
