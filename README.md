@@ -1,6 +1,6 @@
 # Vote for me App
    - :mega: web app which allows you to create the survey, submit it, and see the results with the graphs
-   - :wrench: TypeScript, React, Redux, Chackra UI, Chart.js, ESLint, Prettier
+   - :wrench: TypeScript, React, Redux, Chakra UI, Chart.js, ESLint, Prettier
    - :date: September 2022
    
 <p align="center">
