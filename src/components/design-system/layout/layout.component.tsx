@@ -13,9 +13,7 @@ export const Layout: FunctionComponent<Props> = ({ children }) => {
   return (
     <Flex flexDirection="column" sx={style.mainContainer}>
       <Header />
-      <Box flex={1} pt={4} fontFamily="Open Sans">
-        {children}
-      </Box>
+      <Box sx={style.mainPage}>{children}</Box>
       <Footer />
     </Flex>
   );
