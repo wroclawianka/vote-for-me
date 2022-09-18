@@ -3,6 +3,7 @@ import {
   Flex,
   Grid,
   GridItem,
+  Heading,
   IconButton,
   Input
 } from '@chakra-ui/react';
@@ -31,6 +32,22 @@ export const OptionsForm: FunctionComponent = () => {
 
   return (
     <Grid>
+      <GridItem>
+        <Flex direction="row" justifyContent="space-between">
+          <Heading size="sm" alignSelf="center">
+            Options
+          </Heading>
+          <Button
+            size="sm"
+            leftIcon={<AddIcon />}
+            float="right"
+            onClick={() => addNewOption()}
+            mb={2}
+          >
+            Add option
+          </Button>
+        </Flex>
+      </GridItem>
       {Object.entries(options).map(([key, option]) => (
         <GridItem key={key} mb={2}>
           <Flex>
@@ -48,16 +65,6 @@ export const OptionsForm: FunctionComponent = () => {
           </Flex>
         </GridItem>
       ))}
-      <GridItem>
-        <Button
-          size="sm"
-          leftIcon={<AddIcon />}
-          float="right"
-          onClick={() => addNewOption()}
-        >
-          Add option
-        </Button>
-      </GridItem>
     </Grid>
   );
 };
