@@ -3,6 +3,7 @@ import {
   Button,
   Container,
   Flex,
+  Tooltip,
   useMultiStyleConfig
 } from '@chakra-ui/react';
 import { DeleteIcon, StarIcon } from '@chakra-ui/icons';
@@ -20,28 +21,49 @@ export const Editor: FunctionComponent = () => {
   const resetForm = () => dispatch(resetPoll());
   const updateToDemoPoll = () => dispatch(updateToDemoState());
 
+  const resetFormLabel =
+    'Reset the form and start survey creation from scratch';
+  const demoModeLabel = 'Use demo survey - presented by default';
+
   return (
     <Container sx={style.root}>
       <Flex mb="2">
         <Title>Editor</Title>
         <Flex sx={style.buttonsContainer}>
-          <Button
-            colorScheme="teal"
-            size="sm"
-            leftIcon={<DeleteIcon />}
-            onClick={resetForm}
-            variant="ghost"
+          <Tooltip
+            label={resetFormLabel}
+            aria-label="reset-button"
+            placement="top"
+            hasArrow
           >
-            Reset
-          </Button>
-          <Button
-            colorScheme="teal"
-            size="sm"
-            leftIcon={<StarIcon />}
-            onClick={updateToDemoPoll}
+            <Button
+              colorScheme="teal"
+              size="sm"
+              leftIcon={<DeleteIcon />}
+              onClick={resetForm}
+              variant="ghost"
+              aria-label="reset-button"
+            >
+              Reset
+            </Button>
+          </Tooltip>
+          <Tooltip
+            label={demoModeLabel}
+            aria-label="demo-mode"
+            placement="top"
+            hasArrow
           >
-            Demo
-          </Button>
+            <Button
+              colorScheme="teal"
+              size="sm"
+              leftIcon={<StarIcon />}
+              onClick={updateToDemoPoll}
+              variant="outline"
+              aria-label="demo-mode"
+            >
+              Demo
+            </Button>
+          </Tooltip>
         </Flex>
       </Flex>
       <Box mb={4}>
