@@ -5,7 +5,8 @@ import {
   GridItem,
   Heading,
   IconButton,
-  Input
+  Input,
+  Tooltip
 } from '@chakra-ui/react';
 import { AddIcon, MinusIcon } from '@chakra-ui/icons';
 import { FunctionComponent } from 'react';
@@ -30,6 +31,9 @@ export const OptionsForm: FunctionComponent = () => {
     dispatch(removeOption({ id }));
   };
 
+  const addOptionLabel =
+    'Add a new option. It is possible to have between 2-10 options';
+
   return (
     <Grid>
       <GridItem>
@@ -37,15 +41,23 @@ export const OptionsForm: FunctionComponent = () => {
           <Heading size="sm" alignSelf="center">
             Options
           </Heading>
-          <Button
-            size="sm"
-            leftIcon={<AddIcon />}
-            float="right"
-            onClick={() => addNewOption()}
-            mb={2}
+          <Tooltip
+            label={addOptionLabel}
+            aria-label="add-option"
+            placement="top"
+            hasArrow
           >
-            Add option
-          </Button>
+            <Button
+              size="sm"
+              leftIcon={<AddIcon />}
+              float="right"
+              aria-label="add-option"
+              onClick={() => addNewOption()}
+              mb={2}
+            >
+              Add option
+            </Button>
+          </Tooltip>
         </Flex>
       </GridItem>
       {Object.entries(options).map(([key, option]) => (

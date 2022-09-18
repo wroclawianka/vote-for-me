@@ -7,6 +7,7 @@ import {
   Radio,
   RadioGroup,
   Stack,
+  Tooltip,
   useMultiStyleConfig
 } from '@chakra-ui/react';
 import { CheckIcon } from '@chakra-ui/icons';
@@ -25,19 +26,29 @@ export const Poll: FunctionComponent = () => {
   const [value, setValue] = useState(firstOption);
   const submitPoll = () => dispatch(addSubmition(value));
 
+  const voteButtonLabel = 'Submit your vote. Results will be auto-updated';
+
   return (
     <Container sx={style.root}>
       <Flex justifyContent="space-between" mb="2">
         <Title>Poll</Title>
         <Flex sx={style.buttonsContainer}>
-          <Button
-            colorScheme="teal"
-            size="sm"
-            leftIcon={<CheckIcon />}
-            onClick={() => submitPoll()}
+          <Tooltip
+            label={voteButtonLabel}
+            aria-label="vote-button"
+            placement="top"
+            hasArrow
           >
-            Vote
-          </Button>
+            <Button
+              colorScheme="teal"
+              size="sm"
+              leftIcon={<CheckIcon />}
+              aria-label="vote-button"
+              onClick={() => submitPoll()}
+            >
+              Vote
+            </Button>
+          </Tooltip>
         </Flex>
       </Flex>
       <Heading size="sm" sx={style.question}>

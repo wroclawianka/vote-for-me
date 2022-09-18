@@ -3,10 +3,11 @@ import {
   Button,
   Container,
   Flex,
+  IconButton,
   Tooltip,
   useMultiStyleConfig
 } from '@chakra-ui/react';
-import { DeleteIcon, StarIcon } from '@chakra-ui/icons';
+import { DeleteIcon, InfoIcon, StarIcon } from '@chakra-ui/icons';
 import { FunctionComponent } from 'react';
 import { useDispatch } from 'react-redux';
 import { QuestionInput } from './questionInput';
@@ -21,6 +22,8 @@ export const Editor: FunctionComponent = () => {
   const resetForm = () => dispatch(resetPoll());
   const updateToDemoPoll = () => dispatch(updateToDemoState());
 
+  const editorTooltipLabel = `Editor allows you to create and edit the survey. 
+  Question and options are automaticly updated`;
   const resetFormLabel =
     'Reset the form and start survey creation from scratch';
   const demoModeLabel = 'Use demo survey - presented by default';
@@ -28,7 +31,21 @@ export const Editor: FunctionComponent = () => {
   return (
     <Container sx={style.root}>
       <Flex mb="2">
-        <Title>Editor</Title>
+        <Flex gap="2">
+          <Title>Editor</Title>
+          <Tooltip
+            label={editorTooltipLabel}
+            aria-label="editor-description"
+            placement="top"
+            hasArrow
+          >
+            <IconButton
+              variant="ghost"
+              aria-label="info-icon"
+              icon={<InfoIcon />}
+            />
+          </Tooltip>
+        </Flex>
         <Flex sx={style.buttonsContainer}>
           <Tooltip
             label={resetFormLabel}
