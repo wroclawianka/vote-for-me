@@ -22,24 +22,8 @@ export const Editor: FunctionComponent = () => {
 
   return (
     <Container sx={style.root}>
-      <>
-        <Title>Editor</Title>
-        <Box mb={4}>
-          <QuestionInput />
-        </Box>
-        <Box mb={4}>
-          <OptionsForm />
-        </Box>
-      </>
+      <Title>Editor</Title>
       <Flex sx={style.buttonsContainer}>
-        <Button
-          colorScheme="teal"
-          size="sm"
-          leftIcon={<StarIcon />}
-          onClick={updateToDemoPoll}
-        >
-          Demo
-        </Button>
         <Button
           colorScheme="teal"
           size="sm"
@@ -49,7 +33,21 @@ export const Editor: FunctionComponent = () => {
         >
           Reset
         </Button>
+        <Button
+          colorScheme="teal"
+          size="sm"
+          leftIcon={<StarIcon />}
+          onClick={updateToDemoPoll}
+        >
+          Demo
+        </Button>
       </Flex>
+      <Box mb={4}>
+        <QuestionInput />
+      </Box>
+      <Box mb={4}>
+        <OptionsForm />
+      </Box>
     </Container>
   );
 };

@@ -4,14 +4,12 @@ export const editorTheme = {
     baseStyle: {
       root: {
         h: '100%',
-        position: 'relative'
+        position: 'relative',
+        mb: '100px'
       },
       buttonsContainer: {
         width: '100%',
-        justifyContent: 'center',
-        position: 'absolute',
-        bottom: '5',
-        gap: '1'
+        justifyContent: 'end'
       }
     }
   }
