@@ -22,6 +22,7 @@ import {
   updatToDemoState,
   updatePoll
 } from '../../slices/pollSlice';
+import { Heading as Title } from '../design-system';
 
 export const Editor: FunctionComponent = () => {
   const style = useMultiStyleConfig('editor', {});
@@ -47,11 +48,7 @@ export const Editor: FunctionComponent = () => {
   return (
     <Container sx={style.editor}>
       <>
-        <Flex justifyContent="center" pb={4}>
-          <Heading size="lg" fontFamily="Permanent Marker">
-            Editor
-          </Heading>
-        </Flex>
+        <Title>Editor</Title>
         <Box mb={4}>
           <QuestionInput />
         </Box>

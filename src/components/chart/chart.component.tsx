@@ -3,7 +3,6 @@ import {
   Flex,
   FormControl,
   FormLabel,
-  Heading,
   Switch,
   useMultiStyleConfig
 } from '@chakra-ui/react';
@@ -11,7 +10,7 @@ import { FunctionComponent, useState } from 'react';
 import { Bar, Pie } from 'react-chartjs-2';
 import { useSelector } from 'react-redux';
 import { State } from '../../types';
-import { BarIcon, ChartIcon } from '../design-system';
+import { BarIcon, ChartIcon, Heading as Title } from '../design-system';
 
 export const Chart: FunctionComponent = () => {
   const style = useMultiStyleConfig('chart', {});
@@ -55,9 +54,7 @@ export const Chart: FunctionComponent = () => {
   return (
     <Container sx={style.chart}>
       <Flex justifyContent="center" pb={4}>
-        <Heading size="lg" fontFamily="Permanent Marker">
-          Chart
-        </Heading>
+        <Title>Chart</Title>
       </Flex>
       <Flex>
         <FormControl width="100%" display="flex" justifyContent="center">
