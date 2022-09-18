@@ -1,9 +1,20 @@
 export const chartTheme = {
   chart: {
-    parts: ['chart'],
+    parts: ['root', 'formControl', 'formLabel', 'switch'],
     baseStyle: {
-      chart: {
+      root: {
         h: '100%'
+      },
+      formControl: {
+        width: '100%',
+        display: 'flex',
+        justifyContent: 'center'
+      },
+      formLabel: {
+        ml: 2
+      },
+      switch: {
+        mt: 1
       }
     }
   }
