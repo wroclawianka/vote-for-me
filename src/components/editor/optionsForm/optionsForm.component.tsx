@@ -5,14 +5,14 @@ import {
   GridItem,
   Heading,
   IconButton,
-  Input,
-  Tooltip
+  Input
 } from '@chakra-ui/react';
 import { AddIcon, MinusIcon } from '@chakra-ui/icons';
 import { FunctionComponent } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Option, State } from '../../../types';
 import { addOption, removeOption, updatePoll } from '../../../slices/pollSlice';
+import { Tooltip } from '../../design-system';
 
 export const OptionsForm: FunctionComponent = () => {
   const { options } = useSelector((state: { poll: State }) => state.poll);
@@ -33,6 +33,8 @@ export const OptionsForm: FunctionComponent = () => {
 
   const addOptionLabel =
     'Add a new option. It is possible to have between 2-10 options';
+  const removeOptionLabel =
+    'Remove option. It is possible to have between 2-10 options';
 
   return (
     <Grid>
@@ -41,12 +43,7 @@ export const OptionsForm: FunctionComponent = () => {
           <Heading size="sm" alignSelf="center">
             Options
           </Heading>
-          <Tooltip
-            label={addOptionLabel}
-            aria-label="add-option"
-            placement="top"
-            hasArrow
-          >
+          <Tooltip label={addOptionLabel} aria-label="add-option">
             <Button
               size="sm"
               leftIcon={<AddIcon />}
@@ -54,6 +51,7 @@ export const OptionsForm: FunctionComponent = () => {
               aria-label="add-option"
               onClick={() => addNewOption()}
               mb={2}
+              disabled={Object.entries(options).length >= 10}
             >
               Add option
             </Button>
@@ -68,12 +66,15 @@ export const OptionsForm: FunctionComponent = () => {
               onChange={(event) => editOption(key, event.target.value)}
               mr={2}
             />
-            <IconButton
-              aria-label="delete"
-              disabled={Object.entries(options).length <= 2}
-            >
-              <MinusIcon onClick={() => removeOptionById(key)} />
-            </IconButton>
+            <Tooltip label={removeOptionLabel} aria-label="remove-option">
+              <IconButton
+                aria-label="delete"
+                disabled={Object.entries(options).length <= 2}
+                onClick={() => removeOptionById(key)}
+              >
+                <MinusIcon />
+              </IconButton>
+            </Tooltip>
           </Flex>
         </GridItem>
       ))}

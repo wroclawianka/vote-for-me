@@ -4,7 +4,6 @@ import {
   FormControl,
   FormLabel,
   Switch,
-  Tooltip,
   useMultiStyleConfig
 } from '@chakra-ui/react';
 import { FunctionComponent, useState } from 'react';
@@ -12,7 +11,12 @@ import { Bar, Pie } from 'react-chartjs-2';
 import { useSelector } from 'react-redux';
 import { chartOptions, dataSetsOptions } from '../../constants';
 import { State } from '../../types';
-import { BarIcon, ChartIcon, Heading as Title } from '../design-system';
+import {
+  BarIcon,
+  ChartIcon,
+  Heading as Title,
+  Tooltip
+} from '../design-system';
 
 export const Chart: FunctionComponent = () => {
   const style = useMultiStyleConfig('chart', {});
@@ -36,12 +40,7 @@ export const Chart: FunctionComponent = () => {
       <Flex justifyContent="space-between" mb="2">
         <Title>Chart</Title>
         <Flex>
-          <Tooltip
-            label={chartTypeSwitchLabel}
-            aria-label="vote-button"
-            placement="top"
-            hasArrow
-          >
+          <Tooltip label={chartTypeSwitchLabel} aria-label="vote-button">
             <FormControl sx={style.formControl}>
               <FormLabel htmlFor="chart-type" sx={style.formLabel}>
                 <ChartIcon />

@@ -4,7 +4,6 @@ import {
   Container,
   Flex,
   IconButton,
-  Tooltip,
   useMultiStyleConfig
 } from '@chakra-ui/react';
 import { DeleteIcon, InfoIcon, StarIcon } from '@chakra-ui/icons';
@@ -12,7 +11,7 @@ import { FunctionComponent } from 'react';
 import { useDispatch } from 'react-redux';
 import { QuestionInput } from './questionInput';
 import { resetPoll, updateToDemoState } from '../../slices/pollSlice';
-import { Heading as Title } from '../design-system';
+import { Heading as Title, Tooltip } from '../design-system';
 import { OptionsForm } from './optionsForm';
 
 export const Editor: FunctionComponent = () => {
@@ -33,26 +32,16 @@ export const Editor: FunctionComponent = () => {
       <Flex mb="2">
         <Flex gap="2">
           <Title>Editor</Title>
-          <Tooltip
-            label={editorTooltipLabel}
-            aria-label="editor-description"
-            placement="top"
-            hasArrow
-          >
+          <Tooltip label={editorTooltipLabel} aria-label="editor-description">
             <IconButton
               variant="ghost"
-              aria-label="info-icon"
+              aria-label="editor-description"
               icon={<InfoIcon />}
             />
           </Tooltip>
         </Flex>
         <Flex sx={style.buttonsContainer}>
-          <Tooltip
-            label={resetFormLabel}
-            aria-label="reset-button"
-            placement="top"
-            hasArrow
-          >
+          <Tooltip label={resetFormLabel} aria-label="reset-button">
             <Button
               colorScheme="teal"
               size="sm"
@@ -64,12 +53,7 @@ export const Editor: FunctionComponent = () => {
               Reset
             </Button>
           </Tooltip>
-          <Tooltip
-            label={demoModeLabel}
-            aria-label="demo-mode"
-            placement="top"
-            hasArrow
-          >
+          <Tooltip label={demoModeLabel} aria-label="demo-mode">
             <Button
               colorScheme="teal"
               size="sm"
