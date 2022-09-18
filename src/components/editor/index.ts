@@ -1,2 +1,2 @@
 export * from './editor.component';
-export * from './editor.theme'
+export * from './editor.theme';

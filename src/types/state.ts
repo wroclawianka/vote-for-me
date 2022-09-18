@@ -1,8 +1,8 @@
-import { Option } from "."
+import { Option } from '.';
 
 export type State = {
-    question: string,
-    options: {
-        [key: string]: Option
-    },
-}
+  question: string;
+  options: {
+    [key: string]: Option;
+  };
+};

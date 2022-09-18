@@ -1,1 +1,1 @@
-export * from './questionInput.component'
+export * from './questionInput.component';

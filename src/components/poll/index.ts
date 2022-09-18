@@ -1,2 +1,2 @@
 export * from './poll.component';
-export * from './poll.theme'
+export * from './poll.theme';
