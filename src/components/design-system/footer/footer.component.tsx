@@ -7,11 +7,10 @@ import {
   useMultiStyleConfig
 } from '@chakra-ui/react';
 import { FunctionComponent } from 'react';
+import { githubProfileHref, repositoryHref } from '../../../constants';
 
 export const Footer: FunctionComponent = () => {
   const style = useMultiStyleConfig('design-system/footer', {});
-  const githubProfileHref = 'https://github.com/wroclawianka';
-  const repositoryHref = 'https://github.com/wroclawianka/vote-for-me';
 
   return (
     <>
@@ -22,8 +21,8 @@ export const Footer: FunctionComponent = () => {
             Design and made by{' '}
             <Link href={githubProfileHref} sx={style.link}>
               Dorota Zelga
-            </Link>
-            |
+            </Link>{' '}
+            |{' '}
             <Link href={repositoryHref} sx={style.link}>
               Repository
             </Link>
