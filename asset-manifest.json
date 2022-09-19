@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/vote-for-me/static/js/main.c3197eee.js",
+    "main.js": "/vote-for-me/static/js/main.7bec3920.js",
     "index.html": "/vote-for-me/index.html",
-    "main.c3197eee.js.map": "/vote-for-me/static/js/main.c3197eee.js.map"
+    "main.7bec3920.js.map": "/vote-for-me/static/js/main.7bec3920.js.map"
   },
   "entrypoints": [
-    "static/js/main.c3197eee.js"
+    "static/js/main.7bec3920.js"
   ]
 }
