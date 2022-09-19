@@ -4,8 +4,7 @@ export const layoutTheme = {
     baseStyle: {
       mainContainer: {
         minHeight: '100%',
-        background:
-          'linear-gradient(90deg, white 33%, RGBA(0, 0, 0, 0.04) 33% 67%, white 33%)'
+        background: 'RGBA(0, 0, 0, 0.04)'
       },
       mainPage: {
         flex: 1,

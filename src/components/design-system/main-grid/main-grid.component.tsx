@@ -9,7 +9,10 @@ export const MainGrid: FunctionComponent<Props> = ({ children }) => {
   const style = useMultiStyleConfig('main-grid', {});
 
   return (
-    <Grid sx={style.root} templateColumns={'repeat(3, 1fr)'}>
+    <Grid
+      sx={style.root}
+      templateColumns={{ md: 'repeat(1, 1fr)', lg: 'repeat(3, 1fr)' }}
+    >
       {children}
     </Grid>
   );

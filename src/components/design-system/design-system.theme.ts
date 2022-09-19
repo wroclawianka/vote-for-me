@@ -1,3 +1,4 @@
+import { contentSectionTheme } from './content-section';
 import { footerTheme } from './footer';
 import { headerTheme } from './header';
 import { headingTheme } from './heading';
@@ -9,5 +10,6 @@ export const designSystemTheme = {
   ...headerTheme,
   ...footerTheme,
   ...headingTheme,
-  ...mainGridTheme
+  ...mainGridTheme,
+  ...contentSectionTheme
 };

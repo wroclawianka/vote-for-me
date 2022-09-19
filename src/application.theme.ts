@@ -10,5 +10,10 @@ export const theme = extendTheme({
     ...pollTheme,
     ...editorTheme,
     ...chartTheme
+  },
+  breakpoints: {
+    sm: '320px',
+    md: '768px',
+    lg: '960px'
   }
 });

@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 import { theme } from './application.theme';
 import { Chart, Editor, Layout, MainGrid, Poll } from './components';
 import store from './store';
+import { ContentSection } from './components/design-system/content-section';
 
 function App() {
   ChartJS.register(...registerables);
@@ -13,15 +14,15 @@ function App() {
       <ChakraProvider theme={theme}>
         <Layout>
           <MainGrid>
-            <GridItem w="100%">
+            <ContentSection>
               <Editor />
-            </GridItem>
-            <GridItem w="100%">
+            </ContentSection>
+            <ContentSection>
               <Poll />
-            </GridItem>
-            <GridItem w="100%">
+            </ContentSection>
+            <ContentSection>
               <Chart />
-            </GridItem>
+            </ContentSection>
           </MainGrid>
         </Layout>
       </ChakraProvider>

@@ -3,8 +3,10 @@ export const mainGridTheme = {
     parts: ['root'],
     baseStyle: {
       root: {
-        gap: 6,
-        height: '100%'
+        gap: 3,
+        height: '100%',
+        mr: 3,
+        ml: 3
       }
     }
   }
