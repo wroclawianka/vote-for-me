@@ -1,5 +1,5 @@
 import { Chart as ChartJS, registerables } from 'chart.js';
-import { ChakraProvider, GridItem } from '@chakra-ui/react';
+import { ChakraProvider } from '@chakra-ui/react';
 import { Provider } from 'react-redux';
 import { theme } from './application.theme';
 import { Chart, Editor, Layout, MainGrid, Poll } from './components';

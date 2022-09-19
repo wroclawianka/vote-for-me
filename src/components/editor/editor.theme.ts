@@ -8,7 +8,8 @@ export const editorTheme = {
       },
       buttonsContainer: {
         width: '100%',
-        justifyContent: 'end'
+        justifyContent: 'end',
+        gap: 2
       }
     }
   }

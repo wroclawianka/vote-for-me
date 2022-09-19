@@ -9,7 +9,8 @@ export const contentSectionTheme = {
         pb: '4',
         borderRadius: '20px',
         border: '1px solid',
-        borderColor: 'gray.200'
+        borderColor: 'gray.200',
+        minH: { md: '350px', lg: '577px' }
       }
     }
   }
