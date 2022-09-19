@@ -8,7 +8,7 @@ import {
   Input
 } from '@chakra-ui/react';
 import { AddIcon, MinusIcon } from '@chakra-ui/icons';
-import { FunctionComponent } from 'react';
+import { FunctionComponent, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Option, State } from '../../../types';
 import { addOption, removeOption, updatePoll } from '../../../slices/pollSlice';
@@ -17,9 +17,11 @@ import { Tooltip } from '../../design-system';
 export const OptionsForm: FunctionComponent = () => {
   const { options } = useSelector((state: { poll: State }) => state.poll);
   const dispatch = useDispatch();
+  const [isAutoFocus, setAutoFocus] = useState(false);
 
   const addNewOption = () => {
     dispatch(addOption());
+    setAutoFocus(true);
   };
 
   const editOption = (id: string, value: string) => {
@@ -73,7 +75,7 @@ export const OptionsForm: FunctionComponent = () => {
                 onChange={(event) => editOption(key, event.target.value)}
                 mr={2}
                 placeholder={optionPlaceholder}
-                autoFocus
+                autoFocus={isAutoFocus}
               />
             </Tooltip>
             <Tooltip label={removeOptionLabel} aria-label="remove-option">
