@@ -41,7 +41,7 @@ export const OptionsForm: FunctionComponent = () => {
       <GridItem>
         <Flex direction="row" justifyContent="space-between">
           <Heading size="sm" alignSelf="center">
-            Options
+            {t('editor.options.title')}
           </Heading>
           <Tooltip
             label={t('editor.option.add.tooltip')}
@@ -56,7 +56,7 @@ export const OptionsForm: FunctionComponent = () => {
               mb={2}
               disabled={Object.entries(options).length >= 10}
             >
-              Add option
+              {t('editor.option.add.name')}
             </Button>
           </Tooltip>
         </Flex>

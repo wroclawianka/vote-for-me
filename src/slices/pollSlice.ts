@@ -1,18 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
 import _ from 'lodash';
-import { DEMO_STATE } from '../constants';
+import { CLEAN_STATE, DEMO_STATE } from '../constants';
 import { State } from '../types';
 import { findUniqueId } from '../utils';
 
 const INITIAL_STATE: State = DEMO_STATE;
-
-const CLEAN_STATE: State = {
-  question: 'Type your question',
-  options: {
-    '1': { value: 'Option 1', result: 0 },
-    '2': { value: 'Option 2', result: 0 }
-  }
-};
 
 export const pollSlice = createSlice({
   name: 'poll',

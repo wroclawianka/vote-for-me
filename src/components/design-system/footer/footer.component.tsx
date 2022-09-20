@@ -20,7 +20,7 @@ export const Footer: FunctionComponent = () => {
       <Flex sx={style.root}>
         <Box>
           <Text sx={style.text}>
-            {t('footer.designedBy')}
+            {t('footer.designedBy')}{' '}
             <Link href={githubProfileHref} sx={style.link}>
               {t('footer.author')}
             </Link>{' '}

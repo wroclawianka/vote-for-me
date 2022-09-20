@@ -36,8 +36,12 @@ i18n
             question: {
               name: 'Question'
             },
+            options: {
+              title: 'Options'
+            },
             option: {
               add: {
+                name: 'Add option',
                 tooltip:
                   'Add a new option. It is possible to have between 2-10 options'
               },
@@ -88,6 +92,97 @@ i18n
               back: 'Back in time',
               forward: 'Forward in time',
               coffee: 'Make a coffee'
+            }
+          },
+          cleanState: {
+            question: 'Type your question',
+            options: {
+              option_1: 'Option 1',
+              option_2: 'Option 2'
+            }
+          }
+        }
+      },
+      pl: {
+        translation: {
+          common: {
+            input: {
+              maxLenth: 'Przekroczona maksymalna długość (80 znaków)'
+            }
+          },
+          header: {
+            title: 'Vote for me'
+          },
+          editor: {
+            title: {
+              name: 'Edytor',
+              tooltip:
+                'Editor pozwala stworzyć i edytować ankiete. Pytanie i opcje są automatycznie aktualizowane'
+            },
+            question: {
+              name: 'Pytanie'
+            },
+            options: {
+              title: 'Opcje'
+            },
+            option: {
+              add: {
+                name: 'Dodaj opcje',
+                tooltip: 'Dodaj nową opcje. Dozwolone 2-10 opcji'
+              },
+              remove: {
+                tooltip: 'Usuń opcje. Dozwolone 2-10 opcji'
+              },
+              placeholder: 'Nowa opcja'
+            },
+            button: {
+              reset: {
+                name: 'Wyczyść',
+                tooltip: 'Wyczyść formularz i zacznij tworzyć ankiete od nowa'
+              },
+              demoMode: {
+                name: 'Demo',
+                tooltip: 'Ankieta demonstracyjna'
+              }
+            }
+          },
+          poll: {
+            title: {
+              name: 'Ankieta'
+            },
+            button: {
+              vote: {
+                name: 'Zagłosuj',
+                tooltip: 'Oddaj głos. Wyniki zostaną automatycznie pozsumowane'
+              }
+            }
+          },
+          chart: {
+            title: {
+              name: 'Wykres'
+            },
+            switch: {
+              tooltip: 'Wybierz typ wykresu'
+            }
+          },
+          footer: {
+            designedBy: 'Projekt i wykonanie -',
+            author: 'Dorota Zelga',
+            repository: 'Repozytorium'
+          },
+          demo: {
+            question: 'Wolałbyś maszyne, która tylko i wyłącznie... ?',
+            options: {
+              back: 'Cofa cię w czasie',
+              forward: 'Wysyła do przyszłości',
+              coffee: 'Robi kawę'
+            }
+          },
+          cleanState: {
+            question: 'Podaj pytanie',
+            options: {
+              option_1: 'Opcja 1',
+              option_2: 'Opcja 2'
             }
           }
         }
