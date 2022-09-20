@@ -7,10 +7,12 @@ import {
   useMultiStyleConfig
 } from '@chakra-ui/react';
 import { FunctionComponent } from 'react';
+import { useTranslation } from 'react-i18next';
 import { githubProfileHref, repositoryHref } from '../../../constants';
 
 export const Footer: FunctionComponent = () => {
   const style = useMultiStyleConfig('design-system/footer', {});
+  const { t } = useTranslation();
 
   return (
     <>
@@ -18,13 +20,13 @@ export const Footer: FunctionComponent = () => {
       <Flex sx={style.root}>
         <Box>
           <Text sx={style.text}>
-            Design and made by{' '}
+            {t('footer.designedBy')}
             <Link href={githubProfileHref} sx={style.link}>
-              Dorota Zelga
+              {t('footer.author')}
             </Link>{' '}
             |{' '}
             <Link href={repositoryHref} sx={style.link}>
-              Repository
+              {t('footer.repository')}
             </Link>
           </Text>
         </Box>

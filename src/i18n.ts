@@ -24,6 +24,9 @@ i18n
               maxLenth: 'Max length reached (80 characters)'
             }
           },
+          header: {
+            title: 'Vote for me'
+          },
           editor: {
             title: {
               name: 'Editor',
@@ -72,6 +75,19 @@ i18n
             },
             switch: {
               tooltip: 'Choose the type of the presented chart'
+            }
+          },
+          footer: {
+            designedBy: 'Designed and made by ',
+            author: 'Dorota Zelga',
+            repository: 'Repository'
+          },
+          demo: {
+            question: 'Would you rather have a time machine that can only... ?',
+            options: {
+              back: 'Back in time',
+              forward: 'Forward in time',
+              coffee: 'Make a coffee'
             }
           }
         }
