@@ -3,15 +3,14 @@ import { Button, Menu, MenuButton, MenuItem, MenuList } from '@chakra-ui/react';
 import { FunctionComponent } from 'react';
 import { useTranslation } from 'react-i18next';
 
-type Language = 'EN' | 'PL';
-
 const lngs = {
   en: 'EN',
+  fr: 'FR',
   pl: 'PL'
 };
 
 export const LanguageSelector: FunctionComponent = () => {
-  const { t, i18n } = useTranslation();
+  const { i18n } = useTranslation();
   const selectedLanguage = i18n.language;
 
   return (
@@ -20,7 +19,7 @@ export const LanguageSelector: FunctionComponent = () => {
         {selectedLanguage.toUpperCase()}
       </MenuButton>
 
-      <MenuList>
+      <MenuList minW="0" w="70px">
         {Object.entries(lngs).map(([key, value]) => (
           <MenuItem
             key={key}

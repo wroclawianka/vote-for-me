@@ -28,7 +28,7 @@ module.exports = {
     },
     "rules": {
         'semi': ['error', 'always'],
-        'quotes': ["error", "single"],
+        'quotes': ["warn", "single"],
         "react/jsx-filename-extension": ["warn", { "extensions": [".tsx",] }],
         "react/jsx-uses-react": "off",
         "react/react-in-jsx-scope": "off",

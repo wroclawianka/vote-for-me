@@ -1,8 +1,5 @@
 import {
-  Box,
-  Button,
   Divider,
-  Flex,
   Grid,
   Heading,
   Highlight,

@@ -31,7 +31,7 @@ i18n
             title: {
               name: 'Editor',
               tooltip:
-                'Editor allows you to create and edit the survey. Question and options are automaticly updated'
+                'Editor allows you to create and edit the survey. Question and options are automatically updated'
             },
             question: {
               name: 'Question'
@@ -128,10 +128,10 @@ i18n
             option: {
               add: {
                 name: 'Dodaj opcje',
-                tooltip: 'Dodaj nową opcje. Dozwolone 2-10 opcji'
+                tooltip: 'Dodaj nową opcje. Dozwolone 2-10 opcje'
               },
               remove: {
-                tooltip: 'Usuń opcje. Dozwolone 2-10 opcji'
+                tooltip: 'Usuń opcje. Dozwolone 2-10 opcje'
               },
               placeholder: 'Nowa opcja'
             },
@@ -152,8 +152,8 @@ i18n
             },
             button: {
               vote: {
-                name: 'Zagłosuj',
-                tooltip: 'Oddaj głos. Wyniki zostaną automatycznie pozsumowane'
+                name: 'Głosuj',
+                tooltip: 'Oddaj głos. Wyniki zostaną automatycznie podsumowane'
               }
             }
           },
@@ -186,7 +186,99 @@ i18n
             }
           }
         }
+      },
+      /* eslint-disable */
+      fr: {
+        translation: {
+          common: {
+            input: {
+              maxLenth: 'Longueur max atteinte (80 caractères)'
+            }
+          },
+          header: {
+            title: 'Vote for me'
+          },
+          editor: {
+            title: {
+              name: "L'éditeur",
+              tooltip:
+                "L'éditeur vous permet de créer et de modifier l'enquête. La question et les options sont automatiquement mises à jour"
+            },
+            question: {
+              name: 'Question'
+            },
+            options: {
+              title: 'Options'
+            },
+            option: {
+              add: {
+                name: 'Ajouter',
+                tooltip:
+                  "Ajouter une nouvelle option. Il est possible d'avoir entre 2 et 10 options'"
+              },
+              remove: {
+                tooltip:
+                  "Supprimer l'option. Il est possible d'avoir entre 2 et 10 options"
+              },
+              placeholder: 'Nouvelle option'
+            },
+            button: {
+              reset: {
+                name: 'Réinitialiser',
+                tooltip:
+                  "Réinitialisez le formulaire et commencez la création de l'enquête à partir de zéro"
+              },
+              demoMode: {
+                name: 'Démo',
+                tooltip:
+                  "Utiliser l'enquête de démonstration - présentée par défaut"
+              }
+            }
+          },
+          poll: {
+            title: {
+              name: "L'enquête"
+            },
+            button: {
+              vote: {
+                name: 'Voter',
+                tooltip:
+                  'Soumettez votre vote. Les résultats seront mis à jour automatiquement'
+              }
+            }
+          },
+          chart: {
+            title: {
+              name: 'Graphique'
+            },
+            switch: {
+              tooltip: 'Choisissez le type de graphique présenté'
+            }
+          },
+          footer: {
+            designedBy: 'Conçu et faite par ',
+            author: 'Dorota Zelga',
+            repository: 'Dépôt'
+          },
+          demo: {
+            question:
+              'Préférez-vous avoir une machine qui... ?',
+            options: {
+              back: 'Remontez vous dans le temps',
+              forward: 'Emmènera vers le futur',
+              coffee: 'Faire un café'
+            }
+          },
+          cleanState: {
+            question: 'Tapez votre question',
+            options: {
+              option_1: 'Option 1',
+              option_2: 'Option 2'
+            }
+          }
+        }
       }
+      /* eslint-enable */
     }
   });
 
