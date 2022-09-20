@@ -13,26 +13,25 @@ import { QuestionInput } from './questionInput';
 import { resetPoll, updateToDemoState } from '../../slices/pollSlice';
 import { Heading as Title, Tooltip } from '../design-system';
 import { OptionsForm } from './optionsForm';
+import { useTranslation } from 'react-i18next';
 
 export const Editor: FunctionComponent = () => {
   const style = useMultiStyleConfig('editor', {});
+  const { t } = useTranslation();
   const dispatch = useDispatch();
 
   const resetForm = () => dispatch(resetPoll());
   const updateToDemoPoll = () => dispatch(updateToDemoState());
 
-  const editorTooltipLabel = `Editor allows you to create and edit the survey. 
-  Question and options are automaticly updated`;
-  const resetFormLabel =
-    'Reset the form and start survey creation from scratch';
-  const demoModeLabel = 'Use demo survey - presented by default';
-
   return (
     <Container sx={style.root}>
       <Flex mb="2">
         <Flex gap="2">
-          <Title>Editor</Title>
-          <Tooltip label={editorTooltipLabel} aria-label="editor-description">
+          <Title>{t('editor.title.name')}</Title>
+          <Tooltip
+            label={t('editor.title.tooltip')}
+            aria-label="editor-description"
+          >
             <IconButton
               variant="ghost"
               aria-label="editor-description"
@@ -41,7 +40,10 @@ export const Editor: FunctionComponent = () => {
           </Tooltip>
         </Flex>
         <Flex sx={style.buttonsContainer}>
-          <Tooltip label={resetFormLabel} aria-label="reset-button">
+          <Tooltip
+            label={t('editor.button.reset.tooltip')}
+            aria-label="reset-button"
+          >
             <Button
               colorScheme="teal"
               size="sm"
@@ -50,10 +52,13 @@ export const Editor: FunctionComponent = () => {
               variant="ghost"
               aria-label="reset-button"
             >
-              Reset
+              {t('editor.button.reset.name')}
             </Button>
           </Tooltip>
-          <Tooltip label={demoModeLabel} aria-label="demo-mode">
+          <Tooltip
+            label={t('editor.button.demoMode.tooltip')}
+            aria-label="demo-mode"
+          >
             <Button
               colorScheme="teal"
               size="sm"
@@ -62,7 +67,7 @@ export const Editor: FunctionComponent = () => {
               variant="outline"
               aria-label="demo-mode"
             >
-              Demo
+              {t('editor.button.demoMode.name')}
             </Button>
           </Tooltip>
         </Flex>
