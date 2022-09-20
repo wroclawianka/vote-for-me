@@ -4,9 +4,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import { State } from '../../../types';
 import { updateQuestion } from '../../../slices/pollSlice';
 import { Tooltip } from '../../design-system';
+import { useTranslation } from 'react-i18next';
 
 export const QuestionInput: FunctionComponent = () => {
   const { question } = useSelector((state: { poll: State }) => state.poll);
+  const { t } = useTranslation();
   const dispatch = useDispatch();
 
   const updatePollQuestion = (value: string) => {
@@ -14,14 +16,15 @@ export const QuestionInput: FunctionComponent = () => {
     dispatch(updateQuestion(value));
   };
 
-  const maximumInputLength = 'Max length reached (80 characters)';
-
   return (
     <>
       <Heading size="sm" mb={2}>
-        Question
+        {t('editor.question.name')}
       </Heading>
-      <Tooltip label={maximumInputLength} isDisabled={question.length < 80}>
+      <Tooltip
+        label={t('common.input.maxLength')}
+        isDisabled={question.length < 80}
+      >
         <Input
           value={question}
           onChange={(event) => updatePollQuestion(event.target.value)}

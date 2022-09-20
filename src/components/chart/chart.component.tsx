@@ -8,6 +8,7 @@ import {
 } from '@chakra-ui/react';
 import { FunctionComponent, useState } from 'react';
 import { Bar, Pie } from 'react-chartjs-2';
+import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { chartOptions, dataSetsOptions } from '../../constants';
 import { State } from '../../types';
@@ -20,6 +21,7 @@ import {
 
 export const Chart: FunctionComponent = () => {
   const style = useMultiStyleConfig('chart', {});
+  const { t } = useTranslation();
   const { options } = useSelector((state: { poll: State }) => state.poll);
   const [isBarChart, setIsBarChart] = useState<boolean>(false);
 
@@ -33,14 +35,12 @@ export const Chart: FunctionComponent = () => {
     ]
   };
 
-  const chartTypeSwitchLabel = 'Choose the type of the presented chart';
-
   return (
     <Container sx={style.root}>
       <Flex justifyContent="space-between" mb="2">
-        <Title>Chart</Title>
+        <Title>{t('chart.title.name')}</Title>
         <Flex>
-          <Tooltip label={chartTypeSwitchLabel} aria-label="vote-button">
+          <Tooltip label={t('chart.switch.tooltip')} aria-label="vote-button">
             <FormControl sx={style.formControl}>
               <FormLabel htmlFor="chart-type" sx={style.formLabel}>
                 <ChartIcon />

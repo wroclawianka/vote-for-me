@@ -19,11 +19,30 @@ i18n
     resources: {
       en: {
         translation: {
+          common: {
+            input: {
+              maxLenth: 'Max length reached (80 characters)'
+            }
+          },
           editor: {
             title: {
               name: 'Editor',
               tooltip:
                 'Editor allows you to create and edit the survey. Question and options are automaticly updated'
+            },
+            question: {
+              name: 'Question'
+            },
+            option: {
+              add: {
+                tooltip:
+                  'Add a new option. It is possible to have between 2-10 options'
+              },
+              remove: {
+                tooltip:
+                  'Remove option. It is possible to have between 2-10 options'
+              },
+              placeholder: 'New option'
             },
             button: {
               reset: {
@@ -34,6 +53,25 @@ i18n
                 name: 'Demo',
                 tooltip: 'Use demo survey - presented by default'
               }
+            }
+          },
+          poll: {
+            title: {
+              name: 'Poll'
+            },
+            button: {
+              vote: {
+                name: 'Vote',
+                tooltip: 'Submit your vote. Results will be auto-updated'
+              }
+            }
+          },
+          chart: {
+            title: {
+              name: 'Chart'
+            },
+            switch: {
+              tooltip: 'Choose the type of the presented chart'
             }
           }
         }

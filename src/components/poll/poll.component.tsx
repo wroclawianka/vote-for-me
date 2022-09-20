@@ -15,9 +15,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import { State } from '../../types';
 import { addSubmition } from '../../slices/pollSlice';
 import { Heading as Title } from '../design-system';
+import { useTranslation } from 'react-i18next';
 
 export const Poll: FunctionComponent = () => {
   const style = useMultiStyleConfig('poll', {});
+  const { t } = useTranslation();
   const { question, options } = useSelector(
     (state: { poll: State }) => state.poll
   );
@@ -26,15 +28,13 @@ export const Poll: FunctionComponent = () => {
   const [value, setValue] = useState(firstOption);
   const submitPoll = () => dispatch(addSubmition(value));
 
-  const voteButtonLabel = 'Submit your vote. Results will be auto-updated';
-
   return (
     <Container sx={style.root}>
       <Flex justifyContent="space-between" mb="2">
-        <Title>Poll</Title>
+        <Title>{t('poll.title.name')}</Title>
         <Flex sx={style.buttonsContainer}>
           <Tooltip
-            label={voteButtonLabel}
+            label={t('poll.button.vote.tooltip')}
             aria-label="vote-button"
             placement="top"
             hasArrow
@@ -46,7 +46,7 @@ export const Poll: FunctionComponent = () => {
               aria-label="vote-button"
               onClick={() => submitPoll()}
             >
-              Vote
+              {t('poll.button.vote.name')}
             </Button>
           </Tooltip>
         </Flex>

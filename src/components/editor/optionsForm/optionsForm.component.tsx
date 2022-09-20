@@ -13,9 +13,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Option, State } from '../../../types';
 import { addOption, removeOption, updatePoll } from '../../../slices/pollSlice';
 import { Tooltip } from '../../design-system';
+import { useTranslation } from 'react-i18next';
 
 export const OptionsForm: FunctionComponent = () => {
   const { options } = useSelector((state: { poll: State }) => state.poll);
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const [isAutoFocus, setAutoFocus] = useState(false);
 
@@ -34,13 +36,6 @@ export const OptionsForm: FunctionComponent = () => {
     dispatch(removeOption({ id }));
   };
 
-  const addOptionLabel =
-    'Add a new option. It is possible to have between 2-10 options';
-  const removeOptionLabel =
-    'Remove option. It is possible to have between 2-10 options';
-  const maximumInputLength = 'Max length reached (80 characters)';
-  const optionPlaceholder = 'New option';
-
   return (
     <Grid>
       <GridItem>
@@ -48,7 +43,10 @@ export const OptionsForm: FunctionComponent = () => {
           <Heading size="sm" alignSelf="center">
             Options
           </Heading>
-          <Tooltip label={addOptionLabel} aria-label="add-option">
+          <Tooltip
+            label={t('editor.option.add.tooltip')}
+            aria-label="add-option"
+          >
             <Button
               size="sm"
               leftIcon={<AddIcon />}
@@ -67,18 +65,21 @@ export const OptionsForm: FunctionComponent = () => {
         <GridItem key={key} mb={2}>
           <Flex>
             <Tooltip
-              label={maximumInputLength}
+              label={t('common.input.maxLenth')}
               isDisabled={option.value.length < 80}
             >
               <Input
                 value={option.value}
                 onChange={(event) => editOption(key, event.target.value)}
                 mr={2}
-                placeholder={optionPlaceholder}
+                placeholder={t('editor.option.placeholder')}
                 autoFocus={isAutoFocus}
               />
             </Tooltip>
-            <Tooltip label={removeOptionLabel} aria-label="remove-option">
+            <Tooltip
+              label={t('editor.option.remove.tooltip')}
+              aria-label="remove-option"
+            >
               <IconButton
                 aria-label="delete"
                 disabled={Object.entries(options).length <= 2}
