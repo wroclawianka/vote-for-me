@@ -11,7 +11,11 @@ import { AddIcon, MinusIcon } from '@chakra-ui/icons';
 import { FunctionComponent, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Option, State } from '../../../types';
-import { addOption, removeOption, updatePoll } from '../../../slices/pollSlice';
+import {
+  addOption,
+  removeOption,
+  updateOption
+} from '../../../slices/pollSlice';
 import { Tooltip } from '../../design-system';
 import { useTranslation } from 'react-i18next';
 
@@ -29,7 +33,7 @@ export const OptionsForm: FunctionComponent = () => {
   const editOption = (id: string, value: string) => {
     if (value.length > 80) return;
     const option: Option = { ...options[id], value: value };
-    dispatch(updatePoll({ id, value: option.value }));
+    dispatch(updateOption({ id, value: option.value }));
   };
 
   const removeOptionById = (id: string) => {

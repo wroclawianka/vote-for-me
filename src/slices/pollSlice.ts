@@ -24,7 +24,7 @@ export const pollSlice = createSlice({
       const { id } = actions.payload;
       state.options = _.omit(state.options, [id]);
     },
-    updatePoll: (state, actions) => {
+    updateOption: (state, actions) => {
       const { id, value } = actions.payload;
 
       state.options = {
@@ -53,7 +53,7 @@ export const {
   updateToDemoState,
   removeOption,
   addOption,
-  updatePoll,
+  updateOption,
   addSubmition,
   resetPoll
 } = pollSlice.actions;
