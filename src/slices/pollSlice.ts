@@ -1,10 +1,27 @@
 import { createSlice } from '@reduxjs/toolkit';
 import _ from 'lodash';
-import { CLEAN_STATE, DEMO_STATE } from '../constants';
+import i18n from '../i18n';
 import { State } from '../types';
 import { findUniqueId } from '../utils';
 
-const INITIAL_STATE: State = DEMO_STATE;
+const findDemoState = (): State => ({
+  question: i18n.t('demo.question'),
+  options: {
+    '1': { value: i18n.t('demo.options.back'), result: 7 },
+    '2': { value: i18n.t('demo.options.forward'), result: 9 },
+    '3': { value: i18n.t('demo.options.coffee'), result: 10 }
+  }
+});
+
+const findCleanState = (): State => ({
+  question: i18n.t('cleanState.question'),
+  options: {
+    '1': { value: i18n.t('cleanState.options.option_1'), result: 0 },
+    '2': { value: i18n.t('cleanState.options.option_2'), result: 0 }
+  }
+});
+
+const INITIAL_STATE = findDemoState();
 
 export const pollSlice = createSlice({
   name: 'poll',
@@ -43,8 +60,8 @@ export const pollSlice = createSlice({
         [key]: { ...option, result: option.result + 1 }
       };
     },
-    updateToDemoState: () => INITIAL_STATE,
-    resetPoll: () => CLEAN_STATE
+    updateToDemoState: () => findDemoState(),
+    resetPoll: () => findCleanState()
   }
 });
 
